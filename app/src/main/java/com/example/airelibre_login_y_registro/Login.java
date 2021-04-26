@@ -29,16 +29,16 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String usuario = usuario.getText().toString();
-                String contrasena = contrasena.getText().toString();
+                String user = usuario.getText().toString();
+                String passcode = contrasena.getText().toString();
 
-                if (usuario.equals("") || contrasena(""))
+                if (user.equals("") || passcode.equals(""))
                     Toast.makeText(Login.this, "Por favor ingresa todos los datos", Toast.LENGTH_SHORT).show();
                 else {
-                    Boolean verificarusuariocontrasena = DB.verificarusuariocontrasena(usuario, contrasena);
+                    Boolean verificarusuariocontrasena = DB.verificarusuariocontrasena(user, passcode);
                     if (verificarusuariocontrasena == true) {
                         Toast.makeText(Login.this, "Has ingresado correctamente!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplication(), Mapa.class);
+                        Intent intent = new Intent(getApplication(), Loading.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(Login.this, "Información incorrecta", Toast.LENGTH_SHORT).show();

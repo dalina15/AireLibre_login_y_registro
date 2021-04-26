@@ -5,15 +5,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import androidx.annotation.Nullable;
 
 public class BDHelper extends SQLiteOpenHelper {
 
-    public static final String DBHelp = "Login.db";
+    public static final String DBlibre = "Login.db";
 
     public BDHelper(Context context) {
-        super(context, "Login.db", null, null);
+        super(context, "Login.db", null,1);
     }
 
     @Override
