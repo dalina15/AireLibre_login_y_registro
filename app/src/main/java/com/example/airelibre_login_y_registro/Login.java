@@ -33,15 +33,20 @@ public class Login extends AppCompatActivity {
                 String passcode = contrasena.getText().toString();
 
                 if (user.equals("") || passcode.equals(""))
-                    Toast.makeText(Login.this, "Por favor ingresa todos los datos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, getResources().getString(R.string.datos_faltantes), Toast.LENGTH_SHORT).show();
                 else {
                     Boolean verificarusuariocontrasena = DB.verificarusuariocontrasena(user, passcode);
                     if (verificarusuariocontrasena == true) {
-                        Toast.makeText(Login.this, "Has ingresado correctamente!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, getResources().getString(R.string.bienvenida), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplication(), Loading.class);
+
+
+                        // **** Acá cambiar el mapeo de loading a maps!  ****
+
+
                         startActivity(intent);
                     } else {
-                        Toast.makeText(Login.this, "Información incorrecta", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, getResources().getString(R.string.datos_incorrectos), Toast.LENGTH_SHORT).show();
                     }
 
 

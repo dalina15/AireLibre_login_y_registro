@@ -28,11 +28,9 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        progressBar =findViewById(R.id.progressbarr);
+        progressBar = findViewById(R.id.progressbar);
         textView = findViewById(R.id.textView);
 
-
-        //progressAnimation();
 
         usuario = (EditText) findViewById(R.id.usuario);
         contrasena = (EditText) findViewById(R.id.contrasena);
@@ -42,37 +40,36 @@ public class MainActivity extends AppCompatActivity {
         DB = new BDHelper(this);
 
 
-
-            registro.setOnClickListener(new View.OnClickListener() {
+        registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user = usuario.getText ().toString();
+                String user = usuario.getText().toString();
                 String passcode = contrasena.getText().toString();
                 String passcode2 = contrasena2.getText().toString();
 
-                if (user.equals("")|| passcode.equals("")|| passcode2.equals(""))
-                    Toast.makeText(MainActivity.this, "Debes ingresar todos los datos", Toast.LENGTH_SHORT).show();
-                    else{
-                        if (passcode.equals(passcode2)) {
-                            Boolean verificarusuario = DB.verificarusuario((user));
-                            if (verificarusuario == false) {
-                                Boolean insert = DB.insertarData(user, passcode);
-                                if (insert == true) {
-                                    Toast.makeText(MainActivity.this, "El registro se completó correctamente", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), Loading.class);
-                                    startActivity(intent);
-                                } else {
-                                    Toast.makeText(MainActivity.this, "Verifica los datos", Toast.LENGTH_SHORT).show();
-                                }
+                if (user.equals("") || passcode.equals("") || passcode2.equals(""))
+                    Toast.makeText(MainActivity.this, getResources().getString(R.string.datos_faltantes), Toast.LENGTH_SHORT).show();
+                else {
+                    if (passcode.equals(passcode2)) {
+                        Boolean verificarusuario = DB.verificarusuario((user));
+                        if (verificarusuario == false) {
+                            Boolean insert = DB.insertarData(user, passcode);
+                            if (insert == true) {
+                                Toast.makeText(MainActivity.this, getResources().getString(R.string.datos_correctos), Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), Loading.class);
+                                startActivity(intent);
                             } else {
-                                Toast.makeText(MainActivity.this, "El usuario ya existe, por favor, ingresa con él", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, getResources().getString(R.string.comprobar_datos), Toast.LENGTH_SHORT).show();
                             }
-                        }else{
-                                    Toast.makeText( MainActivity.this, "Las contraseñas no son iguales", Toast.LENGTH_SHORT).show();
-                                }
-                            }
+                        } else {
+                            Toast.makeText(MainActivity.this, getResources().getString(R.string.usuario_existente), Toast.LENGTH_SHORT).show();
                         }
-                    });
+                    } else {
+                        Toast.makeText(MainActivity.this, getResources().getString(R.string.validar_contrasena), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
         ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,12 +79,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-}
+    }}
 
-    //public void setProgressBar (int progress, boolean animate) {
-        //AnimacionBarraInicial anim = new AnimacionBarraInicial(this, progressBar, textView, 0f, 100f);
-        //anim.setDuration (8000);
-        //progressBar.setAnimation(anim);
-
-    //}
-}

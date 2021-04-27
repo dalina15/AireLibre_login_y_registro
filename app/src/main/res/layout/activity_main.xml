@@ -4,46 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <EditText
     android:id="@+id/usuario"
+    android:text="@string/usuario"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:hint="Nombre de usuario"
-    android:layout_marginTop="50dp"/>
+    android:layout_marginTop="60dp"/>
 
     <EditText
         android:id="@+id/contrasena"
+        android:text="@string/contrasena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/usuario"/>
 
     <EditText
         android:id="@+id/contrasena2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/contrasena"
+        android:layout_marginTop="25dp"
         android:hint="Repetir Contraseña"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/contrasena"/>
+        android:text="@string/contrasena2" />
 
     <Button
         android:id="@+id/btn_registro"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registrarse"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/contrasena2"/>
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/teal_700"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@id/contrasena2"
+        />
 
     <Button
         android:id="@+id/btn_ingresar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ingresar"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/btn_registro"/>
+        android:layout_below="@id/contrasena2"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="60dp"
+        android:backgroundTint="@color/teal_700"
+        android:layout_toRightOf="@id/btn_registro"
+        android:text="Ingresar" />
 
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:scaleType="fitEnd"
+        android:visibility="visible"
+        android:layout_below="@id/btn_ingresar"
+        app:srcCompat="@mipmap/aire_libre_logo"
+        tools:ignore="MissingConstraints" />
 </RelativeLayout>

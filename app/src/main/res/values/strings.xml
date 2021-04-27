@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">AireLibre Login</string>
+    <string name="usuario">Nombre de Usuario</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="ignorar">Recordar más tarde</string>
+    <string name="contrasena">Ingrese su contraseña</string>
+    <string name="contrasena2">Repita la contraseña</string>
+    <string name="datos_faltantes">Debes ingresar todos los datos</string>
+    <string name="datos_correctos">El registro se completó correctamente</string>
+    <string name="comprobar_datos">Verifica los datos</string>
+    <string name="usuario_existente">El usuario ya existe, por favor, ingresa con él</string>
+    <string name="validar_contrasena">Las contraseñas no son iguales</string>
+    <string name="bienvenida">Has ingresado correctamente!</string>
+    <string name="datos_incorrectos">Información incorrecta</string>
+
 </resources>

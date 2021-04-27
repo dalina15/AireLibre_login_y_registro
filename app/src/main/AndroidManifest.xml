@@ -4,20 +4,19 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/aire_libre_icon"
+        android:icon="@mipmap/aire_libre_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/aire_libre_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AireLibre_login_y_registro">
-        <activity android:name=".Loading"></activity>
-        <activity android:name=".Login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".Login" />
     </application>
 
 </manifest>

@@ -2,10 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@drawable/aire_libre_logo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
     tools:context=".Loading">
 
     <TextView
@@ -17,14 +17,25 @@
         android:textColor="#fff"
         android:textSize="20sp"
         android:layout_centerHorizontal="true"
-        android:layout_below= "@id/progressbarr"/>
+        android:layout_below= "@id/progressbar"/>
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/aire_libre_logo"
+        android:scaleType="fitEnd"
+        android:visibility="visible" />Z
 
     <ProgressBar
+        android:id="@+id/progressbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/progressbarr"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="55dp" />
 
 </RelativeLayout>
